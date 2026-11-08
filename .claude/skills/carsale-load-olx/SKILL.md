@@ -5,9 +5,8 @@ description: Open the saved OLX.ua search for Volkswagen Cross Polo (2006–2009
 
 # CarSale: загрузка OLX.ua
 
-> ВОССТАНОВЛЕНО ПО СМЫСЛУ. Оригинальный URL поиска найти не удалось — вставьте его ниже.
 
-URL поиска: **<ВСТАВИТЬ URL OLX.ua>**
+URL поиска: https://www.olx.ua/uk/transport/legkovye-avtomobili/volkswagen/?currency=UAH&search%5Bfilter_enum_model%5D%5B0%5D=polo&search%5Bfilter_enum_transmission_type%5D%5B0%5D=546&search%5Bfilter_float_motor_engine_size_litre%3Afrom%5D=1&search%5Bfilter_float_motor_engine_size_litre%3Ato%5D=2&search%5Bfilter_float_motor_year%3Afrom%5D=2006&search%5Bfilter_float_motor_year%3Ato%5D=2009
 Фильтры (из заголовка файла): Volkswagen Cross Polo, 2006–2009, автомат, объём 1–2 л.
 
 ## Шаги

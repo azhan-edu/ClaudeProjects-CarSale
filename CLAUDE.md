@@ -11,7 +11,7 @@
 - `update_summary.py` — слияние в сводку + классификация + график.
 
 ## Конвейер (скиллы в `.claude/skills/`)
-1. `carsale-load-olx`, `carsale-load-autoria` — загрузка страниц поиска в md-файлы. URL поиска ещё не вставлены (см. TODO).
+1. `carsale-load-olx`, `carsale-load-autoria` — загрузка страниц поиска в md-файлы.
 2. `carsale-update-summary` — `python3 update_summary.py`.
 3. `carsale-price-chart` — график (делает тот же скрипт, если сводка изменилась).
 4. `carsale-email-report` — письмо.
@@ -24,5 +24,4 @@
 - Секреты — только в `.env` (в git не попадает).
 
 ## TODO
-- Вставить URL поиска OLX и AUTO.RIA в `.claude/skills/carsale-load-*/SKILL.md`.
 - Скрипт отправки письма с вложением и расписание (launchd).

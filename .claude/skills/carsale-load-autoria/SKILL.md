@@ -5,9 +5,8 @@ description: Open the saved AUTO.RIA search for Volkswagen Cross Polo (2006–20
 
 # CarSale: загрузка AUTO.RIA
 
-> ВОССТАНОВЛЕНО ПО СМЫСЛУ. Оригинальный URL поиска найти не удалось — вставьте его ниже.
 
-URL поиска: **<ВСТАВИТЬ URL AUTO.RIA>**
+URL поиска: https://auto.ria.com/search/?search_type=1&category=1&all[0].any[0].brand=84&all[0].any[0].any[0].model=30380&all[0].any[0].any[1].model=789&all[0].any[0].year[0]=2006&all[0].any[0].year[1]=2010&all[1].any[0].fuel[0]=1&gearbox[0]=2&gearbox[1]=3&gearbox[2]=4&gearbox[3]=5&abroad=0&customs_cleared=1&page=0&limit=20
 Фильтры (из заголовка файла): Volkswagen Cross Polo, 2006–2010, бензин, автомат, растаможенные.
 
 ## Шаги
