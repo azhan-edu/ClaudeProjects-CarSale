@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Send the CarSaleBot e-mail: latest-day table (green = new car, orange = price changed)
-with cross-polo-2weeks.png attached. Usage: python send_report.py [--dry-run]
+(no attachment). Usage: python send_report.py [--dry-run]
 Needs SMTP_USER and SMTP_APP_PASSWORD (Google app password) in .env or the environment.
 --dry-run writes out/preview.eml + out/preview.html and sends nothing."""
 import os, re, sys, html, smtplib
@@ -51,17 +51,15 @@ def render(day, items):
         body += f"<tr{st}>" + "".join(f"<td>{x}</td>" for x in c[:10]) + f"<td>{link}</td></tr>"
     return (f'<div style="font-family:Arial,sans-serif;font-size:14px"><p><b>Последние объявления (за последний день), снимок {day}</b></p>'
             f'<table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;font-size:13px"><tr style="background:#eee">{th}</tr>{body}</table>'
-            f'<p style="font-size:12px;color:#555">Зелёный — новый автомобиль, оранжевый — изменилась цена. График цен за 2 недели — во вложении.</p></div>')
+            f'<p style="font-size:12px;color:#555">Зелёный — новый автомобиль, оранжевый — изменилась цена.</p></div>')
 
 def main():
     load_env(); dry = "--dry-run" in sys.argv
     day, items = build(); page = render(day, items)
     msg = EmailMessage(); msg["Subject"] = SUBJECT; msg["To"] = TO
     msg["From"] = os.environ.get("SMTP_USER", "carsalebot@localhost")
-    msg.set_content("Список объявлений и график — в HTML-версии письма. График во вложении.")
+    msg.set_content("Список объявлений — в HTML-версии письма.")
     msg.add_alternative(page, subtype="html")
-    png = D/"cross-polo-2weeks.png"
-    msg.add_attachment(png.read_bytes(), maintype="image", subtype="png", filename=png.name)
     if dry:
         (D/"out").mkdir(exist_ok=True)
         (D/"out"/"preview.eml").write_bytes(bytes(msg)); (D/"out"/"preview.html").write_text(page, encoding="utf-8")
@@ -69,5 +67,5 @@ def main():
     u, p = os.environ.get("SMTP_USER"), os.environ.get("SMTP_APP_PASSWORD")
     if not (u and p): sys.exit("Set SMTP_USER and SMTP_APP_PASSWORD in .env")
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s: s.login(u, p); s.send_message(msg)
-    print("sent to", TO, "with", png.name)
+    print("sent to", TO)
 main()
