@@ -5,7 +5,7 @@ description: Merge the latest-day data from the AUTO.RIA and OLX.ua Cross Polo f
 
 # CarSale: обновление сводки
 
-Рабочая папка: ~/ClaudeProjects/CarSale. Готовая реализация: `python3 update_summary.py` (пишет `report.json`).
+Рабочая папка: ~/ClaudeProjects/CarSale. Готовая реализация: `.venv/bin/python update_summary.py` (пишет `report.json`).
 
 ## Файлы (точные имена)
 - Источники: `cross-polo_avto-riа-com.md` (AUTO.RIA, буква «а» в «riа» кириллическая), `cross-polo_olx-ua.md` (OLX.ua). Если имя не совпало — найти по маске `cross-polo_*.md` и сообщить, какой файл взят.
